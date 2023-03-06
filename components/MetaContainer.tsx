@@ -4,7 +4,7 @@ import {useRouter} from "next/router";
 import Navbar from "../components/Navigation";
 import Footer from "../components/Footer";
 
-export default function MetaContainer({children, ...customMeta}) {
+export default function MetaContainer({children?, ...customMeta}) {
     const router = useRouter();
 
     const meta = {
