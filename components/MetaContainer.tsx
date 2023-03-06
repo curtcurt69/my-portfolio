@@ -30,7 +30,7 @@ export default function MetaContainer({children, ...customMeta}) {
                     href={`https://www.devcurt.com${router.asPath}`}
                 />
                 <meta property="og:type" content={meta.type}/>
-                <meta property="og:site_name" content="Paul Knulst"/>
+                <meta property="og:site_name" content="Curtis Crouse"/>
                 <meta property="og:description" content={meta.description}/>
                 <meta property="og:title" content={meta.title}/>
                 <meta property="og:image" content={meta.image}/>
