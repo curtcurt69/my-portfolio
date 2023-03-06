@@ -24,7 +24,7 @@ const Main = () => {
                         two years of experience as a web developer and I am about to graduate from Broward College. I am ready to get my career started!
                         </p>
                         <p className="mb-4">
-                            This is one of many portfolio sites I have made. This is the only one i have made with Nextjs. Checkout my other portfolio site at <a href="http://devcurt.com" className="text-blue">DevCurt</a>.
+                            This is one of many portfolio sites I have made. This is the only one i have made with Nextjs. Checkout my other portfolio site at <a href="http://devcurt.com" className="text-blue" target="_blank">DevCurt</a>.
                         </p>
                         <h2 className="font-bold">Coding into space 🚀</h2>
                     </div>
