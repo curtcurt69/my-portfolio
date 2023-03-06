@@ -33,7 +33,7 @@ const Sponsor = () => {
     };
     const paypalBtnStyle = {
         color: "gold",
-        height: 500,
+        height: 45,
         label: "checkout",
         layout: "horizontal",
         shape: "rect",
