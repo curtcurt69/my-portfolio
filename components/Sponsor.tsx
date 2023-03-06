@@ -10,14 +10,14 @@ const Sponsor = () => {
     const {push} = useRouter();
 
     const paypalOptions = {
-        "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+        "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID!,
         "currency": "USD",
         "intent": "capture",
     }
 
     const defaultAmounts = [1, 5, 10, 20];
     const createCheckOutSession = async () => {
-        const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
+        const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!);
         const stripe = await stripePromise;
         const checkoutSession = await axios.post("/api/prepare-stripe-payment", {
             amount: amount,
@@ -32,11 +32,14 @@ const Sponsor = () => {
         }
     };
     const paypalBtnStyle = {
-        color: 'gold',
-        layout: 'horizontal',
-        tagline: 'false',
+        color: "gold",
+        height: 500,
+        label: "checkout",
+        layout: "horizontal",
+        shape: "rect",
+        tagline: false,
     }
-
+    // @ts-ignore
     return (
         <div className="container px-4 mx-auto">
             <div
@@ -91,6 +94,7 @@ const Sponsor = () => {
                         <div className="w-full rounded-lg text-xl font-bold">
                             <PayPalScriptProvider options={paypalOptions}>
                                 <PayPalButtons
+                                    //@ts-ignore
                                     style={paypalBtnStyle}
                                     createOrder={(data, actions) => {
                                         return actions.order.create({
@@ -104,7 +108,7 @@ const Sponsor = () => {
                                         });
                                     }}
                                     onApprove={(data, actions) => {
-                                        return actions.order.capture().then((details) => {
+                                        return actions.order!.capture().then((details) => {
                                             push("/payment-successful").then()
                                         });
                                     }}
